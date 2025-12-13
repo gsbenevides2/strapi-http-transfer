@@ -1,0 +1,1 @@
+export const USER_AGENT = "MediaCenterDownloader/1.0";

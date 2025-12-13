@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "start": "deno run -A --env-file=.env src/index.ts",
+    "dev": "deno run -A --env-file=.env --watch src/index.ts"
+  },
+  "imports": {
+    "mime": "npm:mime",
+    "@/": "./src/"
+  }
+}
