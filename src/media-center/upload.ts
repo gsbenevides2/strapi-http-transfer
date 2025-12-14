@@ -30,8 +30,11 @@ interface FileCreationData {
         id: number;
 }
 
-async function uploadFile(authenticationData: AuthenticationData, file: IntermediateFileData, folderId?: number){
+async function uploadFile(authenticationData: AuthenticationData, file: IntermediateFileData, folderId?: number, fileReplacementId?: number){
     const url = new URL('/upload', authenticationData.endpoint);
+    if(fileReplacementId){
+        url.searchParams.set("id", fileReplacementId.toString());
+    }
     // Don't set Content-Type when sending FormData: the boundary is set automatically
     const headers = new Headers();
     headers.append("Authorization", `Bearer ${authenticationData.jwtToken}`);
