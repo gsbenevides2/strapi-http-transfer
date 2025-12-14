@@ -12,7 +12,7 @@ export interface Instance {
 export const instancesManager = {
     addInstance(instance: Instance){
         const instances = this.listInstances();
-        if(instances.find((instance: Instance) => instance.name === instance.name)){
+        if(instances.find((instanceSelected: Instance) => instanceSelected.name === instance.name)){
             throw new Error(`Instance with name ${instance.name} already exists`);
         }
         instances.push(instance);
